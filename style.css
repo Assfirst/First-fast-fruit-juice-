@@ -1,73 +1,355 @@
-/* กำหนดฟอนต์ให้กับทั้งเว็บไซต์ */
+/* GENERAL STYLES */
 body {
-    font-family: Arial, sans-serif; /* เปลี่ยนเป็นฟอนต์ที่ชอบได้ */
-    margin: 0; /* ลบขอบ */
-    padding: 0; /* ลบระยะห่างภายใน */
-    background-color: #f8f8f8; /* สีพื้นหลัง */
+    font-family: 'Arial', sans-serif; /* เปลี่ยนฟอนต์เป็น Arial หรือฟอนต์ที่ชอบ */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333; /* สีตัวอักษรหลัก */
 }
 
-/* ตกแต่งส่วนหัว */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #c7615e; /* สีลิงก์ */
+    transition: color 0.3s ease; /* เพิ่ม transition ให้กับสีลิงก์ */
+}
+
+a:hover {
+    color: #963f3c;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #c7615e;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #963f3c;
+}
+
+/* HEADER */
 header {
-    background-color: #f08080; /* สีพื้นหลัง */
-    color: #fff; /* สีตัวอักษร */
-    padding: 20px; /* ระยะห่างภายใน */
-    text-align: center; /* จัดข้อความตรงกลาง */
+    background-color: transparent;
+    padding: 20px 0;
+    position: absolute; /* กำหนดให้ header อยู่เหนือ hero section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* กำหนดให้ header อยู่เหนือ element อื่น */
 }
 
-/* ตกแต่งเมนู */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
 nav ul {
-    list-style: none; /* ลบจุดนำหน้า */
-    padding: 0; /* ลบระยะห่างภายใน */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right; /* จัดให้เมนูอยู่ทางขวา */
 }
 
 nav li {
-    display: inline; /* แสดงเมนูแนวนอน */
-    margin-right: 20px; /* ระยะห่างระหว่างเมนู */
+    display: inline-block;
+    margin-left: 30px;
 }
 
 nav a {
-    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
-    color: #fff; /* สีลิงก์ */
+    color: #fff;
+    font-weight: 500;
 }
 
-/* ตกแต่งส่วนแสดงสินค้า */
+nav a:hover,
+nav a.active {
+    color: #ddd;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero.jpg') center/cover no-repeat; /* ใส่รูป hero.jpg เป็นพื้นหลัง */
+    color: #fff;
+    text-align: center;
+    padding: 200px 0; /* เพิ่ม padding ด้านบนและด้านล่าง */
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease; /* เพิ่ม animation ให้กับ hero content */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* PRODUCTS SECTION */
 #products {
-    padding: 20px; /* ระยะห่างภายใน */
+    padding: 50px 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* จัดเรียงสินค้าเป็น grid */
+    gap: 30px;
 }
 
 .product {
-    border: 1px solid #ddd; /* เส้นขอบ */
-    padding: 10px; /* ระยะห่างภายใน */
-    margin-bottom: 20px; /* ระยะห่างระหว่างสินค้า */
-    text-align: center; /* จัดข้อความตรงกลาง */
-    background-color: #fff; /* สีพื้นหลัง */
-    border-radius: 10px; /* มุมโค้ง */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบเขต */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับสินค้า */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition ให้กับ transform และ box-shadow */
+}
+
+.product:hover {
+    transform: translateY(-5px); /* ยกสินค้าขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    position: relative;
 }
 
 .product img {
-    max-width: 200px; /* ขนาดรูปภาพ */
-    height: auto; /* ปรับความสูงอัตโนมัติ */
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* ปรับขนาดรูปภาพให้พอดีกับพื้นที่ */
 }
 
-/* ตกแต่งปุ่ม */
-button {
-    background-color: #4CAF50; /* สีพื้นหลัง */
-    color: white; /* สีตัวอักษร */
-    padding: 10px 20px; /* ระยะห่างภายใน */
-    border: none; /* ลบเส้นขอบ */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปมือ */
-    border-radius: 5px; /* มุมโค้ง */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; /* ซ่อน overlay ไว้ก่อน */
+    transition: opacity 0.3s ease; /* เพิ่ม transition ให้กับ opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-button:hover{
+
+.product:hover .overlay {
+    opacity: 1; /* แสดง overlay เมื่อ hover */
+}
+
+.quick-view {
+    background-color: #c7615e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quick-view:hover {
+    background-color: #963f3c;
+}
+
+.product h3 {
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+.product .description {
+    padding: 0 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.product .price {
+    padding: 10px 15px;
+    font-weight: 600;
+}
+
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-to-cart:hover {
     background-color: #3e8e41;
 }
-/* ตกแต่งส่วนท้าย */
-footer {
-    background-color: #333; /* สีพื้นหลัง */
-    color: #fff; /* สีตัวอักษร */
-    text-align: center; /* จัดข้อความตรงกลาง */
-    padding: 10px; /* ระยะห่างภายใน */
-    position: fixed;
-    bottom: 0;
+
+/* CONTACT SECTION */
+#contact {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+}
+
+.contact-form {
+    width: 50%;
+    float: left;
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-  }
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* กำหนดให้ padding และ border อยู่ภายใน width */
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical; /* กำหนดให้ผู้ใช้สามารถปรับขนาด textarea ได้เฉพาะแนวตั้ง */
+}
+
+.contact-form button {
+    background-color: #c7615e;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #963f3c;
+}
+
+.contact-info {
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    color: #c7615e;
+    margin-right: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #888;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-content .add-to-cart {
+    margin-top: 20px;
+}
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .contact-form,
+    .contact-info {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+    }
+
+    .contact-info {
+        margin-top: 30px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    }
