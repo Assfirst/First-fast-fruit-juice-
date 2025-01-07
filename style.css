@@ -83,6 +83,45 @@ nav a.active {
     color: #ddd;
 }
 
+/* HEADER */
+header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: absolute; /* กำหนดให้ header อยู่เหนือ hero section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* กำหนดให้ header อยู่เหนือ element อื่น */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right; /* จัดให้เมนูอยู่ทางขวา */
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav a {
+    color: #fff;
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ddd;
+}
+
 /* HERO SECTION */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero.jpg') center/cover no-repeat; /* ใส่รูป hero.jpg เป็นพื้นหลัง */
@@ -108,14 +147,30 @@ nav a.active {
 
 .hero h2 {
     font-size: 48px;
+    font-weight: 600;
     margin-bottom: 20px;
+    color: white; /* เปลี่ยนสีข้อความให้ตัดกับพื้นหลัง */
 }
 
 .hero p {
     font-size: 18px;
+    font-weight: 500;
     margin-bottom: 30px;
+    color: white; /* เปลี่ยนสีข้อความให้ตัดกับพื้นหลัง */
+}
+.hero .btn {
+    display: inline-block;
+    background-color: #c7615e; /* สีชมพูเข้ม */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold; /* ข้อความหนาขึ้น */
 }
 
+.hero .btn:hover {
+    background-color: #963f3c; /* สีชมพูเข้มขึ้นเมื่อโฮเวอร์ */
+    }
 /* PRODUCTS SECTION */
 #products {
     padding: 50px 0;
