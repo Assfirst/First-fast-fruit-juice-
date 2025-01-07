@@ -124,57 +124,77 @@ nav a.active {
 
 /* HERO SECTION */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero.jpg') center/cover no-repeat; /* ใส่รูป hero.jpg เป็นพื้นหลัง */
-    color: #fff;
+    background-color: #f8f8f8; /* สีพื้นหลังเดิม */
+    color: #333; /* สีข้อความหลัก */
     text-align: center;
-    padding: 200px 0; /* เพิ่ม padding ด้านบนและด้านล่าง */
+    padding: 100px 0; /* ปรับ padding */
 }
 
 .hero-content {
-    animation: fadeInUp 1s ease; /* เพิ่ม animation ให้กับ hero content */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดองค์ประกอบให้อยู่ตรงกลางแนวตั้ง */
+    justify-content: center; /* จัดองค์ประกอบให้อยู่ตรงกลางแนวนอน */
+    animation: fadeInUp 1s ease;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-image {
+    width: 50%; /* กำหนดความกว้าง */
+    padding: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* เพิ่มมุมโค้ง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    display: block;
+}
+
+.hero-text {
+    width: 50%; /* กำหนดความกว้าง */
+    text-align: left; /* จัดข้อความชิดซ้าย */
+    padding: 20px;
 }
 
 .hero h2 {
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: white; /* เปลี่ยนสีข้อความให้ตัดกับพื้นหลัง */
+    color: #c7615e; /* ใช้สีหลักของร้าน */
 }
 
 .hero p {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 30px;
-    color: white; /* เปลี่ยนสีข้อความให้ตัดกับพื้นหลัง */
+    color: #333; /* ใช้สีข้อความหลัก */
 }
+
 .hero .btn {
     display: inline-block;
-    background-color: #c7615e; /* สีชมพูเข้ม */
+    background-color: #c7615e;
     color: #fff;
     padding: 15px 30px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    font-weight: bold; /* ข้อความหนาขึ้น */
+    font-weight: bold;
 }
 
 .hero .btn:hover {
-    background-color: #963f3c; /* สีชมพูเข้มขึ้นเมื่อโฮเวอร์ */
-    }
-/* PRODUCTS SECTION */
-#products {
-    padding: 50px 0;
+    background-color: #963f3c;
 }
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* จัดเรียงองค์ประกอบเป็นแนวตั้ง */
+    }
+
+    .hero-image,
+    .hero-text {
+        width: 100%; /* ปรับความกว้างเป็น 100% */
+        text-align: center; /* จัดข้อความตรงกลาง */
+    }
+    }
 
 .products-grid {
     display: grid;
