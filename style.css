@@ -43,7 +43,6 @@ a:hover {
 .btn:hover {
     background-color: #963f3c;
 }
-
 /* HEADER */
 header {
     background-color: transparent;
@@ -85,7 +84,7 @@ nav a.active {
 
 /* HERO SECTION */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('storefront.jpg') center/cover no-repeat; /* ใส่รูป storefront.jpg เป็นพื้นหลัง */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero.jpg') center/cover no-repeat; /* ใส่รูป hero.jpg เป็นพื้นหลัง */
     color: #fff;
     text-align: center;
     padding: 200px 0; /* เพิ่ม padding ด้านบนและด้านล่าง */
@@ -132,6 +131,7 @@ nav a.active {
 .hero .btn:hover {
     background-color: #963f3c; /* สีชมพูเข้มขึ้นเมื่อโฮเวอร์ */
 }
+
 
 /* PRODUCTS SECTION */
 #products {
