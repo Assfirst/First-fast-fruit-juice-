@@ -272,13 +272,17 @@ nav a.active {
 
 /* CONTACT SECTION */
 #contact {
-    background-color: #f2f2f2;
+    background-color: #f8f8f8; /* สีอ่อนลงเล็กน้อย */
     padding: 50px 0;
 }
 
 .contact-form {
-    width: 50%;
+    width: 45%; /* ปรับความกว้าง */
     float: left;
+    background-color: #fff; /* เพิ่มสีพื้นหลัง */
+    padding: 30px; /* เพิ่ม padding */
+    border-radius: 10px; /* เพิ่มมุมโค้ง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
 }
 
 .contact-form input,
@@ -288,45 +292,52 @@ nav a.active {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-sizing: border-box; /* กำหนดให้ padding และ border อยู่ภายใน width */
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* เพิ่มฟอนต์ */
 }
 
 .contact-form textarea {
     height: 150px;
-    resize: vertical; /* กำหนดให้ผู้ใช้สามารถปรับขนาด textarea ได้เฉพาะแนวตั้ง */
+    resize: vertical;
 }
 
 .contact-form button {
-    background-color: #c7615e;
+    background-color: #c7615e; /* สีชมพูเข้ม */
     color: #fff;
-    padding: 12px 30px;
+    padding: 15px 30px; /* เพิ่ม padding */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px; /* เพิ่มขนาดฟอนต์ */
+    font-weight: bold; /* ตัวหนา */
 }
 
 .contact-form button:hover {
-    background-color: #963f3c;
+    background-color: #963f3c; /* สีชมพูเข้มขึ้นเมื่อโฮเวอร์ */
 }
 
 .contact-info {
-    width: 50%;
+    width: 45%; /* ปรับความกว้าง */
     float: left;
-    padding-left: 50px;
+    padding: 30px; /* เพิ่ม padding */
+    margin-left: 5%; /* เพิ่มระยะห่างจากแบบฟอร์ม */
 }
 
 .contact-info h3 {
     margin-bottom: 20px;
+    font-size: 24px; /* เพิ่มขนาดหัวข้อ */
 }
 
 .contact-info p {
     margin-bottom: 15px;
+    font-size: 16px; /* เพิ่มขนาดข้อความ */
 }
 
 .contact-info i {
-    color: #c7615e;
+    color: #c7615e; /* สีชมพูเข้ม */
     margin-right: 10px;
+    font-size: 24px; /* เพิ่มขนาดไอคอน */
 }
 
 /* FOOTER */
@@ -335,63 +346,12 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    clear: both; /* เพิ่ม clear: both; */
+}
+footer p{
+    color: #ffffff;
 }
 
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    color: #888;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.modal-content h3 {
-    margin-top: 0;
-}
-
-.modal-content .add-to-cart {
-    margin-top: 20px;
-}
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     .contact-form,
@@ -403,8 +363,9 @@ footer {
 
     .contact-info {
         margin-top: 30px;
+        margin-left: 0; /* รีเซ็ตระยะห่าง */
     }
     .modal-content {
         width: 90%;
     }
-    }
+}
