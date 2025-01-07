@@ -83,118 +83,60 @@ nav a.active {
     color: #ddd;
 }
 
-/* HEADER */
-header {
-    background-color: transparent;
-    padding: 20px 0;
-    position: absolute; /* กำหนดให้ header อยู่เหนือ hero section */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* กำหนดให้ header อยู่เหนือ element อื่น */
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    float: right; /* จัดให้เมนูอยู่ทางขวา */
-}
-
-nav li {
-    display: inline-block;
-    margin-left: 30px;
-}
-
-nav a {
-    color: #fff;
-    font-weight: 500;
-}
-
-nav a:hover,
-nav a.active {
-    color: #ddd;
-}
-
 /* HERO SECTION */
 .hero {
-    background-color: #f8f8f8; /* สีพื้นหลังเดิม */
-    color: #333; /* สีข้อความหลัก */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('storefront.jpg') center/cover no-repeat; /* ใส่รูป storefront.jpg เป็นพื้นหลัง */
+    color: #fff;
     text-align: center;
-    padding: 100px 0; /* ปรับ padding */
+    padding: 200px 0; /* เพิ่ม padding ด้านบนและด้านล่าง */
 }
 
 .hero-content {
-    display: flex; /* ใช้ flexbox */
-    align-items: center; /* จัดองค์ประกอบให้อยู่ตรงกลางแนวตั้ง */
-    justify-content: center; /* จัดองค์ประกอบให้อยู่ตรงกลางแนวนอน */
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1s ease; /* เพิ่ม animation ให้กับ hero content */
 }
 
-.hero-image {
-    width: 50%; /* กำหนดความกว้าง */
-    padding: 20px;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* เพิ่มมุมโค้ง */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
-    display: block;
-}
-
-.hero-text {
-    width: 50%; /* กำหนดความกว้าง */
-    text-align: left; /* จัดข้อความชิดซ้าย */
-    padding: 20px;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero h2 {
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #c7615e; /* ใช้สีหลักของร้าน */
+    color: white; /* เปลี่ยนสีข้อความให้ตัดกับพื้นหลัง */
 }
 
 .hero p {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 30px;
-    color: #333; /* ใช้สีข้อความหลัก */
+    color: white; /* เปลี่ยนสีข้อความให้ตัดกับพื้นหลัง */
 }
-
 .hero .btn {
     display: inline-block;
-    background-color: #c7615e;
+    background-color: #c7615e; /* สีชมพูเข้ม */
     color: #fff;
     padding: 15px 30px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    font-weight: bold;
+    font-weight: bold; /* ข้อความหนาขึ้น */
 }
 
 .hero .btn:hover {
-    background-color: #963f3c;
+    background-color: #963f3c; /* สีชมพูเข้มขึ้นเมื่อโฮเวอร์ */
 }
 
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column; /* จัดเรียงองค์ประกอบเป็นแนวตั้ง */
-    }
-
-    .hero-image,
-    .hero-text {
-        width: 100%; /* ปรับความกว้างเป็น 100% */
-        text-align: center; /* จัดข้อความตรงกลาง */
-    }
-    }
+/* PRODUCTS SECTION */
+#products {
+    padding: 50px 0;
+}
 
 .products-grid {
     display: grid;
@@ -372,6 +314,61 @@ footer p{
     color: #ffffff;
 }
 
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #888;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-content .add-to-cart {
+    margin-top: 20px;
+}
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     .contact-form,
@@ -388,4 +385,4 @@ footer p{
     .modal-content {
         width: 90%;
     }
-}
+        }
