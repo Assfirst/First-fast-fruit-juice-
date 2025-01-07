@@ -1,56 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>firstfast.com</title>
-    <!-- เชื่อมต่อกับไฟล์ CSS -->
+    <title>firstfastshop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 </head>
 <body>
-    <header>
-        <h1>FiestfastShop</h1>
-        <nav>
-            <ul>
-                <li><a href="#">หน้าแรก</a></li>
-                <li><a href="#">เมนู</a></li>
-                <li><a href="#">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="hero">
+        <header>
+            <div class="container">
+                <h1><a href="#" class="logo">ร้านน้ำผลไม้สดชื่น</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">หน้าแรก</a></li>
+                        <li><a href="#products">เมนู</a></li>
+                        <li><a href="#contact">ติดต่อเรา</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero-content">
+            <div class="container">
+                <h2>สดชื่นทุกหยด อร่อยทุกคำ</h2>
+                <p>ดื่มด่ำกับความสดชื่นจากธรรมชาติ</p>
+                <a href="#products" class="btn">ดูเมนู</a>
+            </div>
+        </div>
+    </div>
 
     <main>
         <section id="products">
-            <h2>เมนูน้ำผลไม้</h2>
-            <div class="product">
-                <img src="longan.jpg" alt="น้ำลำไย">
-                <h3>น้ำลำไย</h3>
-                <p>น้ำลำไยสด หอมหวาน ชื่นใจ</p>
-                <p>ราคา: 30 บาท</p>
-                <button>สั่งซื้อ</button> 
+            <div class="container">
+                <h2>เมนูน้ำผลไม้</h2>
+                <div class="products-grid">
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="longan.jpg" alt="น้ำลำไย">
+                            <div class="overlay">
+                                <button class="quick-view" data-product="longan">ดูรายละเอียด</button>
+                            </div>
+                        </div>
+                        <h3>น้ำลำไย</h3>
+                        <p class="description">น้ำลำไยสด หอมหวาน ชื่นใจ</p>
+                        <p class="price">ราคา: 30 บาท</p>
+                        <button class="add-to-cart">สั่งซื้อ</button>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="rambutan.jpg" alt="น้ำเงาะ">
+                            <div class="overlay">
+                                <button class="quick-view" data-product="rambutan">ดูรายละเอียด</button>
+                            </div>
+                        </div>
+                        <h3>น้ำเงาะ</h3>
+                        <p class="description">น้ำเงาะ หวานอมเปรี้ยว สดชื่น</p>
+                        <p class="price">ราคา: 35 บาท</p>
+                        <button class="add-to-cart">สั่งซื้อ</button>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="grape.jpg" alt="น้ำองุ่นไซมัสคัส">
+                            <div class="overlay">
+                                <button class="quick-view" data-product="grape">ดูรายละเอียด</button>
+                            </div>
+                        </div>
+                        <h3>น้ำองุ่นไซมัสคัส</h3>
+                        <p class="description">น้ำองุ่นไซมัสคัส หวานฉ่ำ อร่อย</p>
+                        <p class="price">ราคา: 40 บาท</p>
+                        <button class="add-to-cart">สั่งซื้อ</button>
+                    </div>
+                </div>
             </div>
-            <div class="product">
-                <img src="rambutan.jpg" alt="น้ำเงาะ">
-                <h3>น้ำเงาะ</h3>
-                <p>น้ำเงาะ หวานอมเปรี้ยว สดชื่น</p>
-                <p>ราคา: 35 บาท</p>
-                <button>สั่งซื้อ</button>
-            </div>
-            <div class="product">
-                <img src="grape.jpg" alt="น้ำองุ่น">
-                <h3>น้ำองุ่นไซมัสคัส</h3>
-                <p>น้ำองุ่นไซมัสคัส หวานฉ่ำ อร่อย</p>
-                <p>ราคา: 35 บาท</p>
-                <button>สั่งซื้อ</button>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>ติดต่อเรา</h2>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="ชื่อ-นามสกุล" required>
+                        <input type="email" placeholder="อีเมล" required>
+                        <textarea placeholder="ข้อความ" required></textarea>
+                        <button type="submit">ส่งข้อความ</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>ข้อมูลติดต่อ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ที่อยู่ร้าน: 123 ถนนตัวอย่าง แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์</p>
+                    <p><i class="fas fa-phone"></i> โทร: 08x-xxx-xxxx</p>
+                    <p><i class="fas fa-envelope"></i> อีเมล: info@example.com</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 firstfastshop</p>
+        <div class="container">
+            <p>© 2025 firstfastshop. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- เชื่อมต่อกับไฟล์ JavaScript (ถ้ามี) -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <img id="modalImage" src="" alt="">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+            <button class="add-to-cart">สั่งซื้อ</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-  </html>
+                                </html>
