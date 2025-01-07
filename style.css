@@ -1,0 +1,73 @@
+/* กำหนดฟอนต์ให้กับทั้งเว็บไซต์ */
+body {
+    font-family: Arial, sans-serif; /* เปลี่ยนเป็นฟอนต์ที่ชอบได้ */
+    margin: 0; /* ลบขอบ */
+    padding: 0; /* ลบระยะห่างภายใน */
+    background-color: #f8f8f8; /* สีพื้นหลัง */
+}
+
+/* ตกแต่งส่วนหัว */
+header {
+    background-color: #f08080; /* สีพื้นหลัง */
+    color: #fff; /* สีตัวอักษร */
+    padding: 20px; /* ระยะห่างภายใน */
+    text-align: center; /* จัดข้อความตรงกลาง */
+}
+
+/* ตกแต่งเมนู */
+nav ul {
+    list-style: none; /* ลบจุดนำหน้า */
+    padding: 0; /* ลบระยะห่างภายใน */
+}
+
+nav li {
+    display: inline; /* แสดงเมนูแนวนอน */
+    margin-right: 20px; /* ระยะห่างระหว่างเมนู */
+}
+
+nav a {
+    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+    color: #fff; /* สีลิงก์ */
+}
+
+/* ตกแต่งส่วนแสดงสินค้า */
+#products {
+    padding: 20px; /* ระยะห่างภายใน */
+}
+
+.product {
+    border: 1px solid #ddd; /* เส้นขอบ */
+    padding: 10px; /* ระยะห่างภายใน */
+    margin-bottom: 20px; /* ระยะห่างระหว่างสินค้า */
+    text-align: center; /* จัดข้อความตรงกลาง */
+    background-color: #fff; /* สีพื้นหลัง */
+    border-radius: 10px; /* มุมโค้ง */
+}
+
+.product img {
+    max-width: 200px; /* ขนาดรูปภาพ */
+    height: auto; /* ปรับความสูงอัตโนมัติ */
+}
+
+/* ตกแต่งปุ่ม */
+button {
+    background-color: #4CAF50; /* สีพื้นหลัง */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 20px; /* ระยะห่างภายใน */
+    border: none; /* ลบเส้นขอบ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปมือ */
+    border-radius: 5px; /* มุมโค้ง */
+}
+button:hover{
+    background-color: #3e8e41;
+}
+/* ตกแต่งส่วนท้าย */
+footer {
+    background-color: #333; /* สีพื้นหลัง */
+    color: #fff; /* สีตัวอักษร */
+    text-align: center; /* จัดข้อความตรงกลาง */
+    padding: 10px; /* ระยะห่างภายใน */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
